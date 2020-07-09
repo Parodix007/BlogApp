@@ -1,22 +1,13 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import NavBar from './NavBar/NavBar';
 
-class App extends React.Component{
-  state={
-    dane: null
-  }
-  componentDidMount(){
-    fetch('/dane')
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(err => new Error(err))
-  }
-  render(){
-    return(
-      <>
-        <h1>Client heredasdwasdaw</h1>
-        <p>{this.state.dane}</p>
-      </>
-    )
-  }
-}
+
+const App = () => (
+  <BrowserRouter>
+    <NavBar />
+  </BrowserRouter>
+)
+
+
 export default App;
