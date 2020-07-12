@@ -1,5 +1,11 @@
 .userMenu{
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     width: 100%;
+
+    li{
+        &:hover{
+            border-bottom: 1px solid #e5e5e5;
+        }
+    }
 }
