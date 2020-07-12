@@ -3,22 +3,30 @@ import axios from 'axios'
 
 const MainView = () => {
     
-    const [posts, setPosts] = useState([])
+    const [posts, setPostsArray] = useState([])
 
     useEffect( () => {
-        const getPosts = async () => {
-            const data = await axios.get('/posts')
-        }
-        getPosts()
-
-    })
+        (async () => {
+            const fetchData = await axios.get('/posts')
+            setPostsArray(fetchData.data)
+        })()
+    }, [])
 
     return(
         <>
             <main className='container'>
-                <section className='row'>
-                    <h1>cos tam</h1>
-                </section>
+                {posts.map( ( { title, desc, author } ) => (
+                   <>
+                        <section className='row'>
+                            <div className='col'>
+                                <h1> {title} </h1>
+                                <p> {desc} </p>
+                                <p> {author} </p>
+                            </div>
+                        </section>
+                        <hr />
+                   </>
+                ))}
             </main>
         </>
     )
