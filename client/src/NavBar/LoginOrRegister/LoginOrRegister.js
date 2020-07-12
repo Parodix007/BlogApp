@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import LoginModal from './LoginModal/LoginModal'
+import Modal from './Modal/Modal'
 
 const LoginOrRegister = () => {
         const [isLoginModal, setLoginModal] = useState(false)
@@ -27,7 +28,7 @@ const LoginOrRegister = () => {
                         </a>
                     </li>
                 </ul>
-                {isLoginModal && <LoginModal modal = { () => setLoginModal(!isLoginModal) } /> }
+                {isLoginModal && <Modal render={<LoginModal isModal = { () => setLoginModal(!isLoginModal) } />} /> }
             </>
         )
 }
