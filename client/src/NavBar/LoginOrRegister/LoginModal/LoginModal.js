@@ -18,18 +18,18 @@ const LoginModal = (props) => (
             <form action='/login' method='POST'>
                 <div className='form-group'>
                     <label htmlFor='loginUserName'>Username</label>
-                    <input type='text' name='loginUserName' id='userName' className={input} placeholder='Enter username' />
+                    <input required type='text' name='loginUserName' id='userName' className={input} placeholder='Enter username' />
                 </div>
                 <div className='form-group'>
                     <label htmlFor='loginUserPasswor'>Password</label>
-                    <input type='password' name='loginUserPassword' className={input} placeholder='Enter password' />
+                    <input required type='password' name='loginUserPassword' className={input} placeholder='Enter password' />
                 </div>
             </form>
         </div>
         <div className='modal-footer'>
             <div className={styles.Wrapper}>
                 <button type="button" className="btn btn-danger" onClick={props.isModal}>Close</button>
-                <button type="button" className="btn btn-success">Sign in</button>
+                <button type="submit" className="btn btn-success">Sign in</button>
             </div>
         </div>
     </div>
