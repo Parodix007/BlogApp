@@ -33,8 +33,8 @@ const RegisterModal = (props) => (
         </div>
         <div className='modal-footer'>
             <div className={styles.Wrapper}>
-                <button type="button" className="btn btn-danger" onClick={props.isModal}>Close</button>
-                <button type='submit' className="btn btn-success">Sign up</button>
+                <button type="button" className="btn btn-outline-danger" onClick={props.isModal}>Close</button>
+                <button type='submit' className="btn btn-outline-success">Sign up</button>
             </div>
         </div>
     </div>

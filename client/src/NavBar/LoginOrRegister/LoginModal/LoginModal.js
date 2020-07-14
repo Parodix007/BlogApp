@@ -28,8 +28,8 @@ const LoginModal = (props) => (
         </div>
         <div className='modal-footer'>
             <div className={styles.Wrapper}>
-                <button type="button" className="btn btn-danger" onClick={props.isModal}>Close</button>
-                <button type="submit" className="btn btn-success">Sign in</button>
+                <button type="button" className="btn btn-outline-danger" onClick={props.isModal}>Close</button>
+                <button type="submit" className="btn btn-outline-success">Sign in</button>
             </div>
         </div>
     </div>

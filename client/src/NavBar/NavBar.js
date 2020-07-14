@@ -9,7 +9,8 @@ const navBar = classnames(
     'navbar',
     'navbar-expand-lg',
     'navbar-dark',
-    'bg-dark'
+    'bg-dark',
+    'fixed-top'
 )
 
 const navMenu = classnames(
