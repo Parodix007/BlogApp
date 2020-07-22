@@ -1,12 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 
 const Context = React.createContext({
     index:1
 })
 
-export const ContactPart = ( { children } ) => (
-    children
-)
+export const ContactPart = ( { children } ) => {
+    const WizardContext = useContext(Context)
+    return (
+        <>
+            {children}
+            <p>{WizardContext.index}</p>
+            <hr />
+        </>
+    )
+}
 
 export const Buttons = props => {
     return (
@@ -20,7 +27,7 @@ export const Buttons = props => {
 
 export const Wizard = ( {children} ) => (
     <form method='POST' action='/contact'>
-        <Context.Provider>
+        <Context.Provider value={Context}>
             {children}
         </Context.Provider>
     </form>
