@@ -1,34 +1,47 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useContext} from 'react'
 
-const Context = React.createContext({
-    index:1
+const WizardContext = React.createContext({
+    page: 1,
+    changePage: () => {},
 })
 
-export const ContactPart = ( { children } ) => {
-    const WizardContext = useContext(Context)
+export const ContactPart = ( { children, index } ) => {
+    const { page } = useContext(WizardContext)
     return (
         <>
-            {children}
-            <p>{WizardContext.index}</p>
-            <hr />
+            {
+                index === page && children
+            }
         </>
     )
 }
 
 export const Buttons = props => {
+    const { page, changePage } = useContext(WizardContext)
     return (
         <div className='form-group' {...props}>
-            <button className='btn btn-danger' type='button'>Back</button>
-            <button className='btn btn-primary' type='button'>Next</button>
-            <button className='btn btn-success' type='submit'>Send</button>
+            <button className='btn btn-danger' type='button' onClick={() => changePage(page - 1)} disabled={page === 1}>Back</button>
+            <button className='btn btn-primary' type='button' onClick={() => changePage(page + 1)} disabled={ page === 2}>Next</button>
+            <button className='btn btn-success' type='submit' disabled={page < 2}>Send</button>
         </div>
     )
 }
 
-export const Wizard = ( {children} ) => (
-    <form method='POST' action='/contact'>
-        <Context.Provider value={Context}>
-            {children}
-        </Context.Provider>
-    </form>
-)
+export const Wizard = ( {children} ) => {
+    const [page, setPage] = useState(1)
+
+    const changePage = index => {
+        setPage(index)
+    }
+
+    return (
+        <form method='POST' action='/contact'>
+            <WizardContext.Provider value={{
+                page,
+                changePage
+            }}>
+                {children}
+            </WizardContext.Provider>
+        </form>
+    )
+}

@@ -32,7 +32,7 @@ const MainView = () => {
                                             <p>author: <strong>{author}</strong> </p>
                                         </div>
                                         <div className='col'>
-                                            <img src='https://images.unsplash.com/photo-1594389888765-d8488fc5d3f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' className='img-fluid' alt='post photo url' />
+                                            <img src='https://images.unsplash.com/photo-1594389888765-d8488fc5d3f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' className='img-fluid' alt='url' />
                                         </div>
                                     </section>
                                     <hr />
