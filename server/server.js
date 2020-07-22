@@ -10,8 +10,10 @@ const port = 8000
 app.use( bodyParser.urlencoded( { extended:true } ) )
 app.use( cors() )
 
+//Api`s
 const postsApi = require('./Routes/postsApi')
 
+//Routes
 app.get('/', (req,res) => res.send('Server here'))
 app.use('/posts', postsApi)
 

@@ -1,0 +1,30 @@
+.Wrapper{
+    display: flex;
+    justify-content: center;
+}
+.innerWrapper{
+    display: grid;
+    justify-content: center;
+    margin-top: 80px;
+    padding: 20px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 6px;
+    box-shadow: 0px -2px 23px 4px rgba(0,0,0,0.84);
+    width: 60%;
+    height: 60vh;
+    .Header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        h1{
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    .Buttons{
+        display: flex;
+        justify-content: space-around;
+    }
+}
